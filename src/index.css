@@ -105,3 +105,24 @@
   margin-inline: auto;
   padding-inline: clamp(16px, 4vw, 40px);
 }
+
+/* Clients carousel: on touch screens (no hover), the active site scrolls by itself. */
+@keyframes client-scroll {
+  0%,
+  14% {
+    translate: 0 0;
+  }
+  50%,
+  64% {
+    translate: 0 calc(-100% + 100cqh);
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+
+@media (hover: none) and (prefers-reduced-motion: no-preference) {
+  .is-active .client-shot {
+    animation: client-scroll var(--dur-loop) ease-in-out 1s infinite;
+  }
+}

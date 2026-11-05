@@ -1,3 +1,4 @@
+import Clients from './components/Clients';
 import Contact from './components/Contact';
 import Education from './components/Education';
 import Header, { LangLink, Wordmark, pillClass } from './components/Header';
@@ -28,6 +29,7 @@ export default function App() {
         <Hero t={t} />
         <Profile t={t} />
         <Projects t={t} />
+        <Clients t={t} lang={lang} />
         <Skills t={t} />
         <Education t={t} />
         <Contact t={t} />

@@ -368,3 +368,5 @@ const en: typeof es = {
 };
 
 export const content = { es, en };
+
+export type Content = typeof es;

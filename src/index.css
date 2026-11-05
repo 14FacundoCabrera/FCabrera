@@ -1,0 +1,107 @@
+@import 'tailwindcss';
+
+/* FCabrera brand tokens — taken from the "Logo FCabrera" brand canvas. */
+:root {
+  /* Light ground */
+  --ground: #f7f6f2;
+  --surface: #ffffff;
+  --ink: #4a4a48;
+  --ink-strong: #2e2f2e;
+  --muted: #5e5e5a;
+  --line: #e4e2db;
+  --chip: #eceae3;
+  --accent: #0f7f55;
+  --accent-strong: #0b6b47;
+
+  /* Night bands (header, hero, contact, footer) */
+  --night: #1b1d1c;
+  --night-raised: #242726;
+  --night-line: #343836;
+  --paper: #f3f2ee;
+  --paper-muted: #b4b6b3;
+  --accent-night: #1fa36c;
+  --accent-night-strong: #2fb57a;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #1b1d1c;
+    --surface: #232625;
+    --ink: #f3f2ee;
+    --ink-strong: #ffffff;
+    --muted: #b4b6b3;
+    --line: #333735;
+    --chip: #2b2e2d;
+    --accent: #1fa36c;
+    --accent-strong: #2fb57a;
+
+    --night: #141514;
+    --night-raised: #1f2120;
+    --night-line: #2e3230;
+
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-ground: var(--ground);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-strong: var(--ink-strong);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-chip: var(--chip);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-night: var(--night);
+  --color-night-raised: var(--night-raised);
+  --color-night-line: var(--night-line);
+  --color-paper: var(--paper);
+  --color-paper-muted: var(--paper-muted);
+  --color-accent-night: var(--accent-night);
+  --color-accent-night-strong: var(--accent-night-strong);
+}
+
+@theme {
+  /* Fixed brand greens, used where contrast must not change with the theme */
+  --color-brand: #0f7f55;
+  --color-brand-strong: #0b6b47;
+
+  --font-sans: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --breakpoint-md: 51.25rem; /* 820px */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-ground text-ink font-sans antialiased;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--accent-night);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@utility wrap {
+  width: 100%;
+  max-width: 1160px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 40px);
+}

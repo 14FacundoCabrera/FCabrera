@@ -48,6 +48,7 @@ export default function Header({ t, lang, onSwitch }: Props) {
   const links = [
     ['#perfil', t.nav.about],
     ['#proyectos', t.nav.projects],
+    ['#clientes', t.nav.clients],
     ['#habilidades', t.nav.skills],
     ['#formacion', t.nav.education],
   ] as const;

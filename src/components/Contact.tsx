@@ -1,5 +1,5 @@
 import { contact, type Content } from "../i18n";
-import { CodeIcon, MailIcon, PinIcon, SectionLabel } from "./ui";
+import { CodeIcon, MailIcon, SectionLabel } from "./ui";
 
 const linkClass =
   "text-paper no-underline [overflow-wrap:anywhere] hover:text-accent-night-strong hover:underline";

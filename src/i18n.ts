@@ -6,6 +6,49 @@ export const contact = {
   githubHandle: "14FacundoCabrera",
 };
 
+/**
+ * Client sites shown in the carousel.
+ * To add one: drop a full-page screenshot (1440 px wide, .webp) in `public/clients/`
+ * and add an entry here. `image` is the path under `public/`.
+ * The [Cliente N] entries are placeholders — replace them with real clients.
+ */
+export const clients: {
+  name: string;
+  url: string;
+  image: string;
+  industry: { es: string; en: string };
+  work: { es: string; en: string };
+}[] = [
+  {
+    name: "[Cliente 1]",
+    url: "https://example.com/",
+    image: "/clients/cliente-1.svg",
+    industry: { es: "[Rubro]", en: "[Industry]" },
+    work: { es: "[Qué hiciste: landing, tienda, sistema…]", en: "[What you did: landing, store, system…]" },
+  },
+  {
+    name: "[Cliente 2]",
+    url: "https://example.com/",
+    image: "/clients/cliente-2.svg",
+    industry: { es: "[Rubro]", en: "[Industry]" },
+    work: { es: "[Qué hiciste]", en: "[What you did]" },
+  },
+  {
+    name: "[Cliente 3]",
+    url: "https://example.com/",
+    image: "/clients/cliente-3.svg",
+    industry: { es: "[Rubro]", en: "[Industry]" },
+    work: { es: "[Qué hiciste]", en: "[What you did]" },
+  },
+  {
+    name: "[Cliente 4]",
+    url: "https://example.com/",
+    image: "/clients/cliente-4.svg",
+    industry: { es: "[Rubro]", en: "[Industry]" },
+    work: { es: "[Qué hiciste]", en: "[What you did]" },
+  },
+];
+
 const es = {
   meta: {
     title: "Facundo Cabrera — Analista TI y BI",
@@ -16,6 +59,7 @@ const es = {
     about: "Perfil",
     projects: "Proyectos",
     skills: "Habilidades",
+    clients: "Clientes",
     education: "Formación",
     contact: "Contacto",
     switchLabel: "Read in English",
@@ -94,9 +138,24 @@ const es = {
           "Prisma",
           "Supabase",
         ],
-        repo: null,
+        repo: null as string | null,
       },
     ],
+  },
+  clients: {
+    label: "Clientes",
+    title: "Sitios que construí",
+    hint: "Pasá el mouse sobre el sitio para recorrerlo. Clic para visitarlo.",
+    hintTouch: "Deslizá para ver más sitios. Tocá uno para visitarlo.",
+    visit: "Visitar sitio",
+    visitAria: "Visitar el sitio de",
+    show: "Ver",
+    prev: "Cliente anterior",
+    next: "Cliente siguiente",
+    pause: "Pausar el carrusel",
+    play: "Reproducir el carrusel",
+    of: "de",
+    region: "Sitios de clientes",
   },
   skills: {
     label: "Habilidades",
@@ -189,6 +248,7 @@ const en: typeof es = {
     about: "Profile",
     projects: "Projects",
     skills: "Skills",
+    clients: "Clients",
     education: "Education",
     contact: "Contact",
     switchLabel: "Leer en español",
@@ -309,6 +369,21 @@ const en: typeof es = {
       },
     ],
   },
+  clients: {
+    label: "Clients",
+    title: "Sites I built",
+    hint: "Hover over a site to scroll through it. Click to visit.",
+    hintTouch: "Swipe to see more sites. Tap one to visit it.",
+    visit: "Visit site",
+    visitAria: "Visit the website of",
+    show: "Show",
+    prev: "Previous client",
+    next: "Next client",
+    pause: "Pause carousel",
+    play: "Play carousel",
+    of: "of",
+    region: "Client websites",
+  },
   skills: {
     label: "Skills",
     title: "Tools I work with",
@@ -380,8 +455,8 @@ const en: typeof es = {
     label: "Contact",
     title: "Let's talk",
     body: "Open to roles in Business Intelligence, data analysis, IT analysis, software development, technical support, and cloud / DevOps.",
-    location: "San José, Uruguay",
-    availability: "Available in San José, Montevideo, and remote.",
+    // location: "San José, Uruguay",
+    // availability: "Available in San José, Montevideo, and remote.",
     emailLabel: "Email me",
     githubLabel: "GitHub",
   },

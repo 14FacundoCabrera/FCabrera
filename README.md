@@ -25,3 +25,20 @@ Output goes to `dist/`. Deploys as-is on Vercel (framework preset: Vite).
 - `src/i18n.ts` — all copy, one object per language.
 - `src/index.css` — brand tokens, exposed to Tailwind as `bg-night`, `text-accent`, `border-line`, etc. Light and dark themes follow the visitor's system setting.
 - `src/components/` — one component per section; `Monogram.tsx` is the FC logo; `ui.tsx` holds shared bits (labels, chips, icons).
+
+## Add a client to the carousel
+
+1. Take a full-page screenshot of the client's site at 1440 px wide (taller is fine: the carousel scrolls through it on hover). Save it as `.webp` in `public/clients/`, e.g. `public/clients/acme.webp`.
+2. Add an entry to the `clients` list at the top of `src/i18n.ts`:
+
+   ```ts
+   {
+     name: 'Acme',
+     url: 'https://acme.com/',
+     image: '/clients/acme.webp',
+     industry: { es: 'Gastronomía', en: 'Food & drink' },
+     work: { es: 'Landing y menú online', en: 'Landing page and online menu' },
+   },
+   ```
+
+3. Delete the `[Cliente N]` placeholder entries and their `cliente-N.svg` images.

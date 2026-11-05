@@ -1,13 +1,13 @@
-import type { Content } from '../i18n';
-import Monogram from './Monogram';
+import type { Content } from "../i18n";
+import Monogram from "./Monogram";
 
 export default function Hero({ t }: { t: Content }) {
   return (
     <section
       aria-labelledby="hero-title"
-      className="overflow-hidden bg-night pt-[clamp(56px,9vw,120px)] pb-[clamp(64px,10vw,128px)] text-paper"
+      className="flex min-h-[calc(100dvh-73px)] items-center overflow-hidden bg-night py-[clamp(40px,7vw,96px)] text-paper"
     >
-      <div className="wrap grid items-center gap-[clamp(32px,6vw,80px)] md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
+      <div className="wrap grid w-full items-center gap-[clamp(32px,6vw,80px)] md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
         <div>
           <h1
             id="hero-title"
@@ -24,7 +24,7 @@ export default function Hero({ t }: { t: Content }) {
           <p className="mt-[22px] flex max-w-[34em] items-start gap-3 text-[15px] font-medium text-paper">
             <span
               aria-hidden="true"
-              className="mt-2 size-2.5 flex-none rounded-full bg-accent-night shadow-[0_0_0_5px_color-mix(in_srgb,var(--accent-night)_22%,transparent)]"
+              className="mt-2 size-2.5 flex-none rounded-full animate-pulse bg-accent-night shadow-[0_0_0_5px_color-mix(in_srgb,var(--accent-night)_22%,transparent)]"
             />
             {t.hero.status}
           </p>
@@ -44,9 +44,17 @@ export default function Hero({ t }: { t: Content }) {
           </div>
         </div>
 
-        <div aria-hidden="true" className="flex justify-start max-md:-order-1 md:justify-center">
+        <div
+          aria-hidden="true"
+          className="flex justify-start max-md:-order-1 md:justify-center"
+        >
           <div className="flex aspect-square w-28 items-center justify-center rounded-[26px] border border-night-line bg-night-raised md:w-[min(100%,400px)] md:rounded-[23%]">
-            <Monogram width={260} accent="var(--accent-night)" ink="var(--paper)" className="h-auto w-[66%]" />
+            <Monogram
+              width={260}
+              accent="var(--accent-night)"
+              ink="var(--paper)"
+              className="h-auto w-[66%]"
+            />
           </div>
         </div>
       </div>

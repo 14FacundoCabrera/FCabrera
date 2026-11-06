@@ -4,8 +4,9 @@ import Education from "./components/Education";
 import Header, { LangLink, Wordmark, pillClass } from "./components/Header";
 import Hero from "./components/Hero";
 import Monogram from "./components/Monogram";
-import Profile from "./components/Profile";
+import Process from "./components/Process";
 import Projects from "./components/Projects";
+import Services from "./components/Services";
 import Skills from "./components/Skills";
 import { content } from "./i18n";
 import { useLang } from "./useLang";
@@ -27,7 +28,8 @@ export default function App() {
 
       <main id="main">
         <Hero t={t} />
-        <Profile t={t} />
+        <Services t={t} />
+        <Process t={t} />
         <Projects t={t} />
         <Clients t={t} lang={lang} />
         <Skills t={t} />
@@ -35,7 +37,7 @@ export default function App() {
         <Contact t={t} />
       </main>
 
-      <footer className="border-t border-night-line bg-night py-7 text-sm text-paper-muted">
+      <footer className="border-t border-night-line bg-night-deep py-7 text-sm text-night-muted">
         <div className="wrap flex flex-wrap items-center justify-between gap-4">
           <div className="inline-flex items-center gap-2.5">
             <Monogram

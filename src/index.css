@@ -22,6 +22,13 @@
   --accent-night: #1fa36c;
   --accent-night-strong: #2fb57a;
 
+  /* Soft green tint for icon tiles, badges and the highlighted card */
+  --tint: #e3f1ea;
+  --tint-line: #cfe6da;
+  --tint-ink: #2e4a3d;
+  --night-deep: #161817;
+  --night-muted: #8e918d;
+
   color-scheme: light;
 }
 
@@ -40,6 +47,11 @@
     --night: #141514;
     --night-raised: #1f2120;
     --night-line: #2e3230;
+
+    --tint: #1e2e27;
+    --tint-line: #2a4337;
+    --tint-ink: #cfe6da;
+    --night-deep: #0f1110;
 
     color-scheme: dark;
   }
@@ -62,6 +74,11 @@
   --color-paper-muted: var(--paper-muted);
   --color-accent-night: var(--accent-night);
   --color-accent-night-strong: var(--accent-night-strong);
+  --color-tint: var(--tint);
+  --color-tint-line: var(--tint-line);
+  --color-tint-ink: var(--tint-ink);
+  --color-night-deep: var(--night-deep);
+  --color-night-muted: var(--night-muted);
 }
 
 @theme {
@@ -70,6 +87,7 @@
   --color-brand-strong: #0b6b47;
 
   --font-sans: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
   --breakpoint-md: 51.25rem; /* 820px */
 }
 
@@ -124,5 +142,90 @@
 @media (hover: none) and (prefers-reduced-motion: no-preference) {
   .is-active .client-shot {
     animation: client-scroll var(--dur-loop) ease-in-out 1s infinite;
+  }
+}
+
+/* ---------- Motion & texture (redesign) ---------- */
+
+/* Faint dot grid on the dark bands */
+@utility dots {
+  background-image: radial-gradient(rgb(243 242 238 / 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@utility dots-light {
+  background-image: radial-gradient(rgb(27 29 28 / 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgb(31 163 108 / 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgb(31 163 108 / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(31 163 108 / 0);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@utility pulse-dot {
+  animation: pulse-ring 2.4s ease-out infinite;
+}
+
+@utility marquee {
+  animation: marquee 46s linear infinite;
+}
+
+@utility float {
+  animation: float 7s ease-in-out infinite;
+}
+
+@utility float-slow {
+  animation: float 8s ease-in-out -3s infinite;
+}
+
+/* Cards that rise a little on hover */
+@utility lift {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 44px -26px rgb(27 29 28 / 0.35);
+    border-color: var(--tint-line);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot,
+  .marquee,
+  .float,
+  .float-slow {
+    animation: none;
+  }
+  .lift:hover {
+    transform: none;
   }
 }

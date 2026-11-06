@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type KeyboardEvent, type PointerEvent } from 'react';
 import { clients, type Content, type Lang } from '../i18n';
-import { ArrowUpRight, SectionLabel } from './ui';
+import { ArrowUpRight, SectionLabel, SectionTitle } from './ui';
 
 const AUTOPLAY_MS = 6500;
 const RING_R = 21;
@@ -224,18 +224,17 @@ export default function Clients({ t, lang }: { t: Content; lang: Lang }) {
       id="clientes"
       ref={sectionRef}
       aria-labelledby="clientes-title"
-      className="overflow-hidden bg-night py-[clamp(72px,10vw,128px)] text-paper"
+      className="dots overflow-hidden bg-night py-[clamp(72px,10vw,128px)] text-paper"
     >
       <div className="wrap">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <SectionLabel night>{t.clients.label}</SectionLabel>
-            <h2
-              id="clientes-title"
-              className="text-[clamp(30px,4vw,46px)] font-bold leading-[1.12] tracking-[-0.02em] text-paper"
-            >
+            <SectionLabel index="04" night>
+              {t.clients.label}
+            </SectionLabel>
+            <SectionTitle id="clientes-title" night>
               {t.clients.title}
-            </h2>
+            </SectionTitle>
           </div>
           <p className="max-w-[24em] text-[15px] text-paper-muted">
             <span className="[@media(hover:none)]:hidden">{t.clients.hint}</span>

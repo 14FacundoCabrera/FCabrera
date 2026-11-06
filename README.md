@@ -23,6 +23,7 @@ Output goes to `dist/`. Deploys as-is on Vercel (framework preset: Vite).
 ## Where things live
 
 - `src/i18n.ts` — all copy, one object per language.
+- `public/og.png` — share preview image (1200×630). `index.html` holds the share texts; the live address is set there and in `src/useLang.ts` (`SITE`).
 - `src/index.css` — brand tokens, exposed to Tailwind as `bg-night`, `text-accent`, `border-line`, etc. Light and dark themes follow the visitor's system setting.
 - `src/components/` — one component per section; `Monogram.tsx` is the FC logo; `ui.tsx` holds shared bits (labels, chips, icons).
 

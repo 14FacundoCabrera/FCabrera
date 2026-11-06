@@ -3,6 +3,9 @@ import { content, type Lang } from './i18n';
 
 const langFromPath = (path: string): Lang => (/^\/en(\/|$)/.test(path) ? 'en' : 'es');
 
+/** Live address. Change it here and in index.html once fcabrera.uy is connected. */
+export const SITE = 'https://fcabrera.vercel.app';
+
 export const pathFor = (lang: Lang) => (lang === 'en' ? '/en/' : '/');
 
 /** Spanish lives at `/`, English at `/en/`. Switching updates the URL without a reload. */
@@ -22,7 +25,7 @@ export function useLang() {
     document.querySelector('meta[name="description"]')?.setAttribute('content', t.meta.description);
     document
       .querySelector('link[rel="canonical"]')
-      ?.setAttribute('href', `https://fcabrera.uy${pathFor(lang)}`);
+      ?.setAttribute('href', `${SITE}${pathFor(lang)}`);
   }, [lang]);
 
   const switchTo = useCallback((next: Lang) => {

@@ -1,59 +1,54 @@
 import { contact, type Content } from "../i18n";
-import { CodeIcon, MailIcon, SectionLabel } from "./ui";
-
-const linkClass =
-  "text-paper no-underline [overflow-wrap:anywhere] hover:text-accent-night-strong hover:underline";
-const rowClass =
-  "flex items-start gap-4 border-b border-night-line py-4 text-[clamp(16px,1.8vw,20px)] font-medium";
-const iconClass = "mt-0.5 size-6 flex-none text-accent-night";
+import { Rings } from "./Hero";
+import { ArrowUpRight, CodeIcon, SectionLabel } from "./ui";
 
 export default function Contact({ t }: { t: Content }) {
   return (
     <section
       id="contacto"
       aria-labelledby="contacto-title"
-      className="bg-night py-[clamp(72px,10vw,128px)] text-paper"
+      className="dots relative overflow-hidden bg-night py-[clamp(80px,10vw,128px)] text-paper"
     >
-      <div className="wrap grid items-end gap-[clamp(40px,6vw,80px)] md:grid-cols-2">
-        <div>
-          <SectionLabel night>{t.contact.label}</SectionLabel>
-          <h2
-            id="contacto-title"
-            className="text-[clamp(36px,5vw,60px)] font-bold leading-[1.12] tracking-[-0.02em] text-paper"
-          >
-            {t.contact.title}
-          </h2>
-          <p className="mt-5 max-w-[30em] text-paper-muted">{t.contact.body}</p>
-        </div>
+      <Rings className="-bottom-80 -left-56 size-[640px] rotate-[-90deg] opacity-60" />
+      <div className="wrap relative text-center">
+        <SectionLabel index="07" night>
+          {t.contact.label}
+        </SectionLabel>
+        <h2
+          id="contacto-title"
+          className="mx-auto mt-5 max-w-[12em] text-[clamp(40px,6vw,76px)] font-extrabold leading-[1.02] tracking-[-0.035em] text-paper"
+        >
+          {t.contact.title}
+        </h2>
+        <p className="mx-auto mt-6 max-w-[34em] text-lg text-paper-muted">{t.contact.body}</p>
 
-        <ul className="grid gap-1.5">
-          <li className={rowClass}>
-            <MailIcon className={iconClass} />
-            <a href={`mailto:${contact.email}`} className={linkClass}>
-              <span className="sr-only">{t.contact.emailLabel}: </span>
-              {contact.email}
-            </a>
-          </li>
-          <li className={rowClass}>
-            <CodeIcon className={iconClass} />
-            <a
-              href={contact.github}
-              target="_blank"
-              rel="noopener"
-              className={linkClass}
-            >
-              <span className="sr-only">{t.contact.githubLabel}: </span>
-              github.com/{contact.githubHandle}
-            </a>
-          </li>
-          {/* <li className={rowClass}>
-            <PinIcon className={iconClass} />
-            <span>
-              {t.contact.location}
-              <span className="mt-0.5 block text-[15px] text-paper-muted">{t.contact.availability}</span>
-            </span>
-          </li> */}
-        </ul>
+        <a
+          href={`mailto:${contact.email}`}
+          className="mt-10 inline-flex items-center gap-3.5 border-b-2 border-accent-night pb-1.5 text-[clamp(20px,3vw,36px)] font-bold tracking-[-0.01em] text-paper no-underline transition-colors [overflow-wrap:anywhere] hover:text-accent-night-strong"
+        >
+          <span className="sr-only">{t.contact.emailLabel}: </span>
+          {contact.email}
+          <ArrowUpRight className="size-7 flex-none text-accent-night" />
+        </a>
+
+        <div className="mt-9 flex flex-wrap justify-center gap-3">
+          <a
+            href={`mailto:${contact.email}`}
+            className="inline-flex min-h-[52px] items-center rounded-full bg-brand px-[26px] font-semibold text-white no-underline transition-colors hover:bg-brand-strong hover:text-white"
+          >
+            {t.contact.cta}
+          </a>
+          <a
+            href={contact.github}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex min-h-[52px] items-center gap-2.5 rounded-full border-[1.5px] border-night-line px-[26px] font-semibold text-paper no-underline transition-colors hover:border-paper-muted hover:text-paper"
+          >
+            <CodeIcon className="size-[18px]" />
+            <span className="sr-only">{t.contact.githubLabel}: </span>
+            github.com/{contact.githubHandle}
+          </a>
+        </div>
       </div>
     </section>
   );

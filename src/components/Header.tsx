@@ -34,7 +34,7 @@ export function LangLink({
 }
 
 export const pillClass =
-  'inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-night-line px-3.5 text-sm font-semibold tracking-[0.08em] text-paper no-underline hover:border-accent-night hover:text-paper';
+  'inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-night-line px-3.5 font-mono text-xs font-semibold tracking-[0.04em] text-paper no-underline hover:border-accent-night hover:text-paper';
 
 export function Wordmark({ className = 'text-[22px]' }: { className?: string }) {
   return (
@@ -46,15 +46,15 @@ export function Wordmark({ className = 'text-[22px]' }: { className?: string }) 
 
 export default function Header({ t, lang, onSwitch }: Props) {
   const links = [
-    ['#perfil', t.nav.about],
+    ['#servicios', t.nav.services],
+    ['#proceso', t.nav.process],
     ['#proyectos', t.nav.projects],
     ['#clientes', t.nav.clients],
     ['#habilidades', t.nav.skills],
-    ['#formacion', t.nav.education],
   ] as const;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-night-line bg-night/92 backdrop-blur-md backdrop-saturate-150">
+    <header className="sticky top-0 z-50 border-b border-night-line bg-night/92 [&_a]:shrink-0 backdrop-blur-md backdrop-saturate-150">
       <div className="wrap flex min-h-[72px] items-center justify-between gap-4">
         <a
           href={pathFor(lang)}
@@ -62,33 +62,33 @@ export default function Header({ t, lang, onSwitch }: Props) {
           className="inline-flex items-center gap-3 no-underline"
         >
           <Monogram width={44} accent="var(--accent-night)" ink="var(--paper)" />
-          <Wordmark />
+          <Wordmark className="text-[21px] max-[400px]:hidden" />
         </a>
         <nav aria-label={lang === 'es' ? 'Principal' : 'Main'}>
           <ul className="flex items-center gap-1">
             {links.map(([href, label]) => (
-              <li key={href} className="max-md:hidden">
+              <li key={href} className="max-lg:hidden">
                 <a
                   href={href}
-                  className="inline-flex min-h-11 items-center rounded-[10px] px-3 text-[15px] font-medium text-paper-muted no-underline hover:text-paper"
+                  className="inline-flex min-h-11 items-center rounded-[10px] px-3 text-sm font-medium text-paper-muted no-underline hover:text-paper"
                 >
                   {label}
                 </a>
               </li>
             ))}
-            <li>
-              <a
-                href="#contacto"
-                className="inline-flex min-h-11 items-center rounded-[10px] px-3 text-[15px] font-medium text-paper-muted no-underline hover:text-paper"
-              >
-                {t.nav.contact}
-              </a>
-            </li>
-            <li>
+            <li className="ml-1">
               <LangLink lang={lang} onSwitch={onSwitch} className={pillClass}>
                 <span aria-hidden="true">{t.nav.switchShort}</span>
                 <span className="sr-only">{t.nav.switchLabel}</span>
               </LangLink>
+            </li>
+            <li className="ml-1.5">
+              <a
+                href="#contacto"
+                className="inline-flex min-h-11 items-center rounded-full bg-brand px-[18px] text-sm font-semibold text-white no-underline transition-colors hover:bg-brand-strong hover:text-white"
+              >
+                {t.nav.cta}
+              </a>
             </li>
           </ul>
         </nav>

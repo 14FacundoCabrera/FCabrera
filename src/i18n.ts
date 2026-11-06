@@ -6,6 +6,26 @@ export const contact = {
   githubHandle: "14FacundoCabrera",
 };
 
+/** Technologies shown in the scrolling strip under the hero. */
+export const tech = [
+  "C#",
+  "Python",
+  "TypeScript",
+  "React",
+  "Node.js",
+  ".NET",
+  "PostgreSQL",
+  "MongoDB",
+  "Redis",
+  "Docker",
+  "Linux",
+  "AWS",
+  "Azure",
+  "Vercel",
+  "ESP32",
+  "Arduino",
+];
+
 /**
  * Client sites shown in the carousel.
  * To add one: drop a full-page screenshot (1440 px wide, .webp) in `public/clients/`
@@ -49,102 +69,128 @@ export const clients: {
   },
 ];
 
+/** Icon shown on each service card, in the same order as `services.items`. */
+export type ServiceIcon = "chart" | "database" | "code" | "cloud" | "chip";
+
 const es = {
   meta: {
-    title: "Facundo Cabrera — Analista TI y BI",
+    title: "Facundo Cabrera — Software, datos y automatización para tu negocio",
     description:
-      "Analista TI y BI en Uruguay. Desarrollo full-stack, datos, inteligencia de negocios y DevOps. Abierto a oportunidades en San José, Montevideo y remoto.",
+      "Desarrollador freelance en Uruguay: sitios y tiendas online, sistemas a medida, reportes con datos (BI) y automatización de procesos para negocios.",
   },
   nav: {
-    about: "Perfil",
+    services: "Servicios",
+    process: "Cómo trabajo",
     projects: "Proyectos",
-    skills: "Habilidades",
     clients: "Clientes",
+    skills: "Habilidades",
     education: "Formación",
     contact: "Contacto",
+    cta: "Pedir presupuesto",
     switchLabel: "Read in English",
     switchShort: "EN",
   },
   hero: {
-    eyebrow: "Analista TI y BI · Uruguay",
-    lead: "Combino desarrollo de software con análisis de datos: entiendo la necesidad del negocio, trabajo los datos y convierto soluciones técnicas en herramientas e insights útiles.",
-    status:
-      "Analista TI y BI, con experiencia en desarrollo full-stack y análisis de datos.",
-    ctaPrimary: "Ver proyectos",
-    ctaSecondary: "Contactarme",
+    badge: "Disponible para nuevos proyectos freelance",
+    role: "Software · Datos · Automatización — Freelance",
+    lead: "Ayudo a negocios a trabajar mejor con tecnología: sitios y tiendas online, sistemas a medida, reportes con tus datos y automatización de procesos. Entiendo tu negocio primero y después construyo la solución.",
+    ctaPrimary: "Pedir presupuesto",
+    ctaSecondary: "Ver servicios",
+    facts: [
+      { label: "Modalidad", value: "Freelance · Uruguay y remoto" },
+      { label: "Servicios", value: "Web · Datos · Automatización" },
+      { label: "Idiomas", value: "Español · Inglés B2" },
+    ],
+    floatLabel: "Servicio",
+    floatValue: "Datos y BI",
+    floatPill: "Robótica · ESP32",
   },
-  about: {
-    label: "Perfil",
+  techLabel: "Tecnologías",
+  services: {
+    label: "Servicios",
     title: "Software, datos e infraestructura, con mirada de negocio.",
     body: [
       "Analista TI con foco en BI, explorando la implementación de soluciones robóticas, de software y análisis de datos para tu negocio.",
       "Ofrezco soluciones adaptadas a tus necesidades, aportando mejora de tus procesos actuales y nuevas oportunidades de negocio, focalizando en la eficiencia y la automatización.",
     ],
-    strengthsTitle: "Fortalezas",
-    strengths: [
-      "Mentalidad analítica y orientada a resolver problemas.",
-      "Capacidad de trabajar entre software, bases de datos e infraestructura.",
-      "Interés por entender procesos de negocio y traducirlos en soluciones técnicas.",
-      "Aprendizaje autodirigido y desarrollo de proyectos propios.",
-      "Experiencia colaborando en proyectos de software en equipo.",
+    chips: [
+      "Mentalidad analítica",
+      "Software · datos · infraestructura",
+      "Procesos de negocio",
+      "Aprendizaje autodirigido",
+      "Trabajo en equipo",
     ],
-  },
-  focus: {
-    label: "Enfoque actual",
+    heading: "Qué puedo hacer por tu negocio",
     items: [
       {
-        title: "Analista BI",
-        body: "Inteligencia de negocios, análisis de datos, reportes y apoyo a decisiones basadas en datos.",
+        icon: "chart" as ServiceIcon,
+        title: "Datos y BI",
+        body: "Dashboards, reportes y análisis de tus datos para tomar mejores decisiones.",
       },
       {
-        title: "Analista TI",
-        body: "Sistemas, bases de datos, fundamentos de infraestructura y resolución de problemas técnicos.",
+        icon: "database" as ServiceIcon,
+        title: "Sistemas a medida",
+        body: "Aplicaciones web, APIs y bases de datos adaptadas a cómo trabaja tu negocio.",
       },
       {
-        title: "Desarrollo full-stack",
-        body: "Diseño y desarrollo de aplicaciones web, APIs y sistemas respaldados por bases de datos.",
+        icon: "code" as ServiceIcon,
+        title: "Sitios y tiendas online",
+        body: "Landing pages, sitios web y e-commerce, fáciles de administrar.",
       },
       {
-        title: "DevOps / Cloud",
-        body: "Linux, Docker, flujos de despliegue y plataformas cloud.",
+        icon: "cloud" as ServiceIcon,
+        title: "Infraestructura y cloud",
+        body: "Publicación, servidores, Docker, Linux y soporte técnico.",
       },
       {
+        icon: "chip" as ServiceIcon,
         title: "Robótica y automatización",
         body: "ESP32, Arduino, implementación de IA y automatización de procesos.",
       },
     ],
   },
+  process: {
+    label: "Cómo trabajo",
+    title: "De la idea a la solución funcionando",
+    cta: "Empezar un proyecto",
+    steps: [
+      { title: "Charla inicial", body: "Me contás tu negocio, el problema y qué querés lograr." },
+      { title: "Propuesta", body: "Te paso una solución concreta, con alcance, plazos y presupuesto." },
+      { title: "Desarrollo", body: "Construyo por etapas y te muestro avances para validar en el camino." },
+      {
+        title: "Entrega y soporte",
+        body: "Lo dejo publicado y funcionando, y te acompaño después del lanzamiento.",
+      },
+    ],
+  },
   projects: {
-    label: "Proyectos",
-    title: "Experiencia en proyectos",
+    label: "Producto propio",
+    title: "Lo que estoy construyendo",
     repoLink: "Ver código",
     items: [
       {
         name: "Vendú",
-        role: "Proyecto de software independiente · En desarrollo",
-        summary:
-          "Plataforma modular para que los negocios creen y gestionen tiendas online y landing pages.",
-        points: [
-          "Frontend en React y backend en TypeScript/Express.",
-          "PostgreSQL, Prisma y Supabase.",
-          "Arquitectura multi-tenant y configuración por dominio.",
-          "Flujos de productos, cupones, almacenamiento de imágenes y autenticación.",
+        status: "En desarrollo",
+        kind: "Proyecto independiente",
+        summary: "Plataforma modular para que los negocios creen y gestionen tiendas online y landing pages.",
+        features: [
+          { title: "Multi-tenant", body: "Configuración por dominio" },
+          { title: "Catálogo", body: "Productos, cupones e imágenes" },
+          { title: "Autenticación", body: "Flujos de acceso seguros" },
+          { title: "Full-stack", body: "React + TypeScript/Express" },
         ],
-        stack: [
-          "React",
-          "TypeScript",
-          "Express",
-          "PostgreSQL",
-          "Prisma",
-          "Supabase",
-        ],
+        stack: ["React", "TypeScript", "Express", "PostgreSQL", "Prisma", "Supabase"],
         repo: null as string | null,
+        /** Path under public/ for a screenshot; null shows a placeholder. */
+        image: null as string | null,
+        domain: "[dominio de Vendú]",
+        imagePlaceholder: "[Captura del panel de Vendú]",
       },
     ],
   },
   clients: {
     label: "Clientes",
-    title: "Sitios que construí",
+    title: "Trabajos para clientes",
     hint: "Pasá el mouse sobre el sitio para recorrerlo. Clic para visitarlo.",
     hintTouch: "Deslizá para ver más sitios. Tocá uno para visitarlo.",
     visit: "Visitar sitio",
@@ -161,22 +207,10 @@ const es = {
     label: "Habilidades",
     title: "Herramientas con las que trabajo",
     groups: [
-      {
-        title: "Lenguajes",
-        items: ["C#", "C++", "Python", "Java", "JavaScript", "TypeScript"],
-      },
+      { title: "Lenguajes", items: ["C#", "C++", "Python", "Java", "JavaScript", "TypeScript"] },
       {
         title: "Desarrollo web",
-        items: [
-          "React",
-          "Astro",
-          "Node.js",
-          "Express",
-          ".NET",
-          "REST APIs",
-          "Tailwind CSS",
-          "Vite",
-        ],
+        items: ["React", "Astro", "Node.js", "Express", ".NET", "REST APIs", "Tailwind CSS", "Vite"],
       },
       {
         title: "Bases de datos y datos",
@@ -191,32 +225,22 @@ const es = {
           "BI y análisis de datos",
         ],
       },
-      {
-        title: "Cloud, infraestructura y herramientas",
-        items: ["Docker", "Linux", "AWS", "Azure", "Vercel", "Git y GitHub"],
-      },
+      { title: "Cloud e infraestructura", items: ["Docker", "Linux", "AWS", "Azure", "Vercel", "Git y GitHub"] },
       {
         title: "Otras áreas",
-        items: [
-          "Entrenamiento de modelos de IA e integración de APIs",
-          "Visión por computadora",
-          "Arduino y ESP32",
-          "Hardware de PC y soporte técnico",
-        ],
+        items: ["IA e integración de APIs", "Visión por computadora", "Arduino y ESP32", "Hardware y soporte técnico"],
       },
     ],
+    ctaText: "¿Tu negocio usa otra herramienta? Consultame y lo vemos juntos.",
+    ctaLink: "Hablemos",
   },
   education: {
     label: "Formación",
     title: "ORT Uruguay",
     items: [
-      {
-        title: "Analista en Tecnologías de la Información",
-        period: "2022 – 2026",
-        note: "foco en DevOps",
-      },
-      { title: "Analista Programador", period: "2022 – 2025", note: null },
-      { title: "Programador Web", period: "2022 – 2024", note: null },
+      { title: "Analista en Tecnologías de la Información", period: "2022 – 2026", note: "Foco en DevOps" },
+      { title: "Analista Programador", period: "2022 – 2025", note: null as string | null },
+      { title: "Programador Web", period: "2022 – 2024", note: null as string | null },
     ],
     languagesTitle: "Idiomas",
     languages: [
@@ -226,10 +250,9 @@ const es = {
   },
   contact: {
     label: "Contacto",
-    title: "¿Hablamos?",
-    body: "Abierto a oportunidades en BI, análisis de datos, análisis TI, desarrollo de software, soporte técnico y cloud / DevOps.",
-    // location: "San José, Uruguay",
-    // availability: "Disponible en San José, Montevideo y remoto.",
+    title: "¿Tenés un proyecto en mente?",
+    body: "Contame qué necesitás y te respondo con una propuesta a medida: sitio, sistema, reportes o automatización.",
+    cta: "Pedir presupuesto",
     emailLabel: "Escribime",
     githubLabel: "GitHub",
   },
@@ -240,138 +263,119 @@ const es = {
 
 const en: typeof es = {
   meta: {
-    title: "Facundo Cabrera — IT & BI Analyst",
+    title: "Facundo Cabrera — Software, data and automation for your business",
     description:
-      "IT and BI Analyst based in Uruguay. Full-stack development, data, business intelligence and DevOps. Open to roles in San José, Montevideo and remote.",
+      "Freelance developer in Uruguay: websites and online stores, custom systems, data reporting (BI) and process automation for businesses.",
   },
   nav: {
-    about: "Profile",
+    services: "Services",
+    process: "How I work",
     projects: "Projects",
-    skills: "Skills",
     clients: "Clients",
+    skills: "Skills",
     education: "Education",
     contact: "Contact",
+    cta: "Get a quote",
     switchLabel: "Leer en español",
     switchShort: "ES",
   },
   hero: {
-    eyebrow: "IT & BI Analyst · Uruguay",
-    lead: "I combine a software-development mindset with an analytical approach: understanding business needs, working with data, and turning technical solutions into useful tools and insights.",
-    status:
-      "IT & BI Analyst, with experience in full-stack development and data analysis.",
-    ctaPrimary: "See projects",
-    ctaSecondary: "Get in touch",
+    badge: "Available for new freelance projects",
+    role: "Software · Data · Automation — Freelance",
+    lead: "I help businesses work better with technology: websites and online stores, custom systems, reports built on your data, and process automation. I learn how your business works first, then build the solution.",
+    ctaPrimary: "Get a quote",
+    ctaSecondary: "See services",
+    facts: [
+      { label: "Engagement", value: "Freelance · Uruguay & remote" },
+      { label: "Services", value: "Web · Data · Automation" },
+      { label: "Languages", value: "Spanish · English B2" },
+    ],
+    floatLabel: "Service",
+    floatValue: "Data & BI",
+    floatPill: "Robotics · ESP32",
   },
-  about: {
-    label: "Profile",
+  techLabel: "Technologies",
+  services: {
+    label: "Services",
     title: "Software, data and infrastructure, with a business lens.",
     body: [
-      "I am an IT & BI Analyst, exploring the implementation of robotic, software and data-analysis solutions for your business.",
-      "I offer solutions tailored to your needs, improving your current processes and creating new business opportunities, focusing on efficiency and automation.",
+      "IT Analyst focused on BI, exploring robotics, software and data-analysis solutions for your business.",
+      "I offer solutions tailored to your needs, improving your current processes and opening new business opportunities, with a focus on efficiency and automation.",
     ],
-    strengthsTitle: "Strengths",
-    strengths: [
-      "Analytical, problem-solving mindset.",
-      "Able to work across software, databases, and infrastructure.",
-      "Interested in understanding business processes and translating needs into technical solutions.",
-      "Self-directed learning and hands-on project development.",
-      "Collaborative experience in team-based software projects.",
+    chips: [
+      "Analytical mindset",
+      "Software · data · infrastructure",
+      "Business processes",
+      "Self-directed learning",
+      "Teamwork",
     ],
-  },
-  focus: {
-    label: "Current focus",
+    heading: "What I can do for your business",
     items: [
       {
-        title: "BI Analyst",
-        body: "Business intelligence, data analysis, reporting, and supporting data-informed decisions.",
+        icon: "chart",
+        title: "Data & BI",
+        body: "Dashboards, reports and analysis of your data to make better decisions.",
       },
       {
-        title: "IT Analyst",
-        body: "Systems, databases, infrastructure fundamentals, and technical problem-solving.",
+        icon: "database",
+        title: "Custom systems",
+        body: "Web apps, APIs and databases shaped around how your business works.",
       },
       {
-        title: "Full-stack development",
-        body: "Designing and building web applications, APIs, and database-backed systems.",
+        icon: "code",
+        title: "Websites & online stores",
+        body: "Landing pages, websites and e-commerce that are easy to manage.",
       },
       {
-        title: "DevOps / Cloud",
-        body: "Linux, Docker, deployment workflows, and cloud platforms.",
+        icon: "cloud",
+        title: "Infrastructure & cloud",
+        body: "Hosting, servers, Docker, Linux and technical support.",
       },
       {
-        title: "Robotics and automation",
-        body: "ESP32, Arduino, AI implementation, and process automation.",
+        icon: "chip",
+        title: "Robotics & automation",
+        body: "ESP32, Arduino, AI implementation and process automation.",
       },
+    ],
+  },
+  process: {
+    label: "How I work",
+    title: "From idea to a working solution",
+    cta: "Start a project",
+    steps: [
+      { title: "Intro call", body: "You tell me about your business, the problem and what you want to achieve." },
+      { title: "Proposal", body: "I send you a concrete solution with scope, timeline and price." },
+      { title: "Build", body: "I build in stages and show you progress so we can validate along the way." },
+      { title: "Launch & support", body: "I leave it live and working, and stay with you after launch." },
     ],
   },
   projects: {
-    label: "Projects",
-    title: "Project experience",
+    label: "Own product",
+    title: "What I'm building",
     repoLink: "View code",
     items: [
       {
-        name: "Dubra Transporte y Logística",
-        role: "Full-stack developer · Academic team project",
-        summary:
-          "A B2B logistics and delivery-order management application, built as part of a three-person team.",
-        points: [
-          "Frontend features with React and Vite.",
-          "Backend services with Node.js and Express.",
-          "Data layer with PostgreSQL, Prisma, and Supabase.",
-          "API validation, authentication, and database-backed workflows.",
-          "Mapping and geocoding integration.",
-          "Contributed to deployment and production configuration.",
+        name: "Vendú",
+        status: "In progress",
+        kind: "Independent project",
+        summary: "A modular platform for businesses to create and manage online stores and landing pages.",
+        features: [
+          { title: "Multi-tenant", body: "Domain-based configuration" },
+          { title: "Catalog", body: "Products, coupons and images" },
+          { title: "Authentication", body: "Secure sign-in flows" },
+          { title: "Full-stack", body: "React + TypeScript/Express" },
         ],
-        stack: [
-          "React",
-          "Vite",
-          "Node.js",
-          "Express",
-          "PostgreSQL",
-          "Prisma",
-          "Supabase",
-        ],
-        repo: "https://github.com/14FacundoCabrera/api-dubra",
-      },
-      {
-        name: "Modular e-commerce & business management SaaS",
-        role: "Independent software project · In progress",
-        summary:
-          "A modular platform for businesses to create and manage online stores and landing pages.",
-        points: [
-          "React frontend and TypeScript/Express backend.",
-          "PostgreSQL, Prisma, and Supabase.",
-          "Multi-tenant architecture and domain-based configuration.",
-          "Product, coupon, image-storage, and authentication workflows.",
-        ],
-        stack: [
-          "React",
-          "TypeScript",
-          "Express",
-          "PostgreSQL",
-          "Prisma",
-          "Supabase",
-        ],
+        stack: ["React", "TypeScript", "Express", "PostgreSQL", "Prisma", "Supabase"],
         repo: null,
-      },
-      {
-        name: "Restaurant occupancy analytics prototype",
-        role: "Independent AI / BI project · Exploration",
-        summary:
-          "A computer-vision solution that uses camera feeds to estimate table occupancy and restaurant usage.",
-        points: [
-          "Experimenting with Python and computer-vision tooling.",
-          "Person detection and tracking workflows.",
-          "Defining occupancy events and operational metrics for BI dashboards.",
-          "Prioritizing low-cost deployment and practical value for small businesses.",
-        ],
-        stack: ["Python", "Computer vision", "BI"],
-        repo: null,
+        image: null,
+        domain: "[Vendú domain]",
+        imagePlaceholder: "[Screenshot of the Vendú dashboard]",
       },
     ],
   },
   clients: {
     label: "Clients",
-    title: "Sites I built",
+    title: "Client work",
     hint: "Hover over a site to scroll through it. Click to visit.",
     hintTouch: "Swipe to see more sites. Tap one to visit it.",
     visit: "Visit site",
@@ -388,22 +392,10 @@ const en: typeof es = {
     label: "Skills",
     title: "Tools I work with",
     groups: [
-      {
-        title: "Languages",
-        items: ["C#", "C++", "Python", "Java", "JavaScript", "TypeScript"],
-      },
+      { title: "Languages", items: ["C#", "C++", "Python", "Java", "JavaScript", "TypeScript"] },
       {
         title: "Web development",
-        items: [
-          "React",
-          "Astro",
-          "Node.js",
-          "Express",
-          ".NET",
-          "REST APIs",
-          "Tailwind CSS",
-          "Vite",
-        ],
+        items: ["React", "Astro", "Node.js", "Express", ".NET", "REST APIs", "Tailwind CSS", "Vite"],
       },
       {
         title: "Databases & data",
@@ -418,30 +410,20 @@ const en: typeof es = {
           "BI & data analysis",
         ],
       },
-      {
-        title: "Cloud, infrastructure & tools",
-        items: ["Docker", "Linux", "AWS", "Azure", "Vercel", "Git & GitHub"],
-      },
+      { title: "Cloud & infrastructure", items: ["Docker", "Linux", "AWS", "Azure", "Vercel", "Git & GitHub"] },
       {
         title: "Additional areas",
-        items: [
-          "AI model training & API integration",
-          "Computer vision",
-          "Arduino & ESP32",
-          "PC hardware & technical support",
-        ],
+        items: ["AI & API integration", "Computer vision", "Arduino & ESP32", "Hardware & technical support"],
       },
     ],
+    ctaText: "Does your business use another tool? Ask me and we'll look at it together.",
+    ctaLink: "Let's talk",
   },
   education: {
     label: "Education",
     title: "ORT Uruguay",
     items: [
-      {
-        title: "IT Analyst",
-        period: "2022 – present",
-        note: "Completing the final semester, with a focus on DevOps.",
-      },
+      { title: "IT Analyst", period: "2022 – 2026", note: "Focus on DevOps" },
       { title: "Analyst Programmer", period: "2022 – 2025", note: null },
       { title: "Web Programmer", period: "2022 – 2024", note: null },
     ],
@@ -453,10 +435,9 @@ const en: typeof es = {
   },
   contact: {
     label: "Contact",
-    title: "Let's talk",
-    body: "Open to roles in Business Intelligence, data analysis, IT analysis, software development, technical support, and cloud / DevOps.",
-    // location: "San José, Uruguay",
-    // availability: "Available in San José, Montevideo, and remote.",
+    title: "Have a project in mind?",
+    body: "Tell me what you need and I'll reply with a tailored proposal: website, system, reports or automation.",
+    cta: "Get a quote",
     emailLabel: "Email me",
     githubLabel: "GitHub",
   },
